@@ -79,10 +79,10 @@ class HomePanelBase extends React.Component {
 
         return (
             <Panel id={id}>
-                <PanelHeader>APP</PanelHeader>
+                <PanelHeader>ПромоДруг - партнерская программа для Вашего сообщества</PanelHeader>
                 <Group>
                     <Div>
-                        <Button size="l" stretched={true} onClick={this.requestAccess}>Запросить доступ</Button>
+                        <Button size="l" stretched={true} onClick={this.requestAccess}>Предоставить доступ к виджету</Button>
                     </Div>
                 </Group>
                 {this.state.snackbar}
