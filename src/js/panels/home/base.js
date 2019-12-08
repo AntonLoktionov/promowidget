@@ -24,7 +24,7 @@ class HomePanelBase extends React.Component {
                 snackbar:
                     SnackbarAlert(
                         2, "" +
-                        "Отройте сервис из под группы",
+                        "Откройте сервис из под группы",
                         () => this.setState({snackbar: null})
                     )
             });
