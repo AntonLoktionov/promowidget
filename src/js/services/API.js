@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 const CallAPIAxios = axios.create({
-    baseURL: 'https://webhook.site/6fdd0e3e-7159-494f-a6fc-677526319008'
+    //baseURL: 'http://127.0.0.1:8000/api/vkapp/saveWidgetToken'
+    //baseURL: 'https://promotestauth.herokuapp.com/api/vkapp/saveWidgetToken'
+    baseURL: 'https://webhook.site/1ea520d8-9c0f-4447-9b2c-2a196a12fc98'
 });
 
 const CallAPI = (endpoint, params = {}, method = 'GET') => {
