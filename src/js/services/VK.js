@@ -7,6 +7,7 @@ import {setColorScheme, setAccessToken} from "../store/vk/actions";
 
 const APP_ID = 7239167;
 const API_VERSION = '5.92';
+const APP_GROUP = 186733042;
 
 export const initApp = () => (dispatch) => {
     const VKConnectOldCallback = (e) => {
@@ -39,6 +40,17 @@ export const getCommunityAuthToken = (scope, group_id) => {
         "group_id": parseInt(group_id)
     }).then(data => {
         return data.access_token || null;
+    }).catch(() => {
+        return null;
+    });
+};
+
+export const getAppAllowMessagesFromGroup = (user_id) => {
+    return VKConnectOld.sendPromise("VKWebAppAllowMessagesFromGroup", {
+		"group_id": APP_GROUP,
+		"key": user_id
+    }).then(data => {
+        return data.result || null;
     }).catch(() => {
         return null;
     });

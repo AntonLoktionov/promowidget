@@ -24,7 +24,7 @@ class HomePanelBase extends React.Component {
                 snackbar:
                     SnackbarAlert(
                         2, "" +
-                        "Откройте сервис из под группы",
+                        "Откройте сервис из-под группы",
                         () => this.setState({snackbar: null})
                     )
             });
@@ -74,6 +74,11 @@ class HomePanelBase extends React.Component {
         }
     };
 
+	requestAllowMessages = async () => {
+		let URLParams = getURLParams();
+		let allowMessages = await VK.getAppAllowMessagesFromGroup(URLParams['vk_user_id']);
+	};
+
     render() {
         const {id} = this.props;
 
@@ -83,6 +88,7 @@ class HomePanelBase extends React.Component {
                 <Group>
                     <Div>
                         <Button size="l" stretched={true} onClick={this.requestAccess}>Предоставить доступ к виджету</Button>
+						<Button size="l" stretched={true} onClick={this.requestAccess}>Предоставить доступ на получение сервисных уведомлений</Button>
                     </Div>
                 </Group>
                 {this.state.snackbar}
