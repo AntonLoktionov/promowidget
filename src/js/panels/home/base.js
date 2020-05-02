@@ -88,7 +88,11 @@ class HomePanelBase extends React.Component {
                 <Group>
                     <Div>
                         <Button size="l" stretched={true} onClick={this.requestAccess}>Предоставить доступ к виджету</Button>
-						<Button size="l" stretched={true} onClick={this.requestAccess}>Предоставить доступ на получение сервисных уведомлений</Button>
+                    </Div>
+                </Group>
+				<Group>
+                    <Div>
+						<Button size="l" stretched={true} onClick={this.requestAllowMessages}>Предоставить доступ на получение сервисных уведомлений</Button>
                     </Div>
                 </Group>
                 {this.state.snackbar}
